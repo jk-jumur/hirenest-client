@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,9 +34,12 @@ const Navbar = () => {
             href="/"
             className="text-2xl font-bold tracking-tight"
           >
-            <span className="text-[#1597ff]">hire</span>
-            <span className="text-white">l</span>
-            <span className="text-[#ff7a00]">oop</span>
+            <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={100}
+            height={40}
+            />
           </Link>
 
 

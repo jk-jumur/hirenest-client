@@ -4,6 +4,7 @@ import {
  LogoGithub,
   LogoLinkedin,
 } from "@gravity-ui/icons";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -19,9 +20,12 @@ const Footer = () => {
               href="/"
               className="inline-block text-2xl font-bold tracking-tight"
             >
-              <span className="text-[#1597ff]">hire</span>
-              <span className="text-white">l</span>
-              <span className="text-[#ff7a00]">oop</span>
+                <Image
+                          src="/images/logo.png"
+                          alt="Logo"
+                          width={100}
+                          height={40}
+                          />
             </Link>
 
             <p className="mt-5 max-w-xs text-sm leading-6 text-gray-500">
