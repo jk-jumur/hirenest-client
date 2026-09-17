@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   LogoFacebook,
- LogoGithub,
+  LogoGithub,
   LogoLinkedin,
 } from "@gravity-ui/icons";
 import Image from "next/image";
