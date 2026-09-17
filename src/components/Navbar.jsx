@@ -3,9 +3,24 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { signOut, useSession } from "@/lib/auth-client";
+import { Button } from "@heroui/react";
+
+
+
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { data:session, isPending } = useSession();
+ 
+  //  console.log("session Navbar", session, "isPending Data", isPending);
+   const user = session?.user;
+  //  console.log("user Navbar", user);
+
+   const handleSignOut = async () => {
+    await signOut();
+   }
 
   const navLinks = [
     {
@@ -21,6 +36,8 @@ const Navbar = () => {
       href: "/pricing",
     },
   ];
+
+
 
   return (
     <nav className="sticky top-0 z-50 w-full px-4 pt-4">
@@ -64,13 +81,21 @@ const Navbar = () => {
             <div className="mx-6 h-6 w-px bg-white/20" />
 
             {/* Sign In */}
+             <div className="flex items-center gap-4">
+              {
+                 user ?  <>
+                 
+                   Hi, {user.name}!
+                    <Button onClick={handleSignOut} variant= "ghost">SignOut</Button>
+                 </>
+              :
             <Link
               href="/auth/signin"
               className="text-sm font-medium text-indigo-400 transition-colors duration-200 hover:text-indigo-300"
             >
               Sign In
             </Link>
-
+            }
             {/* Get Started */}
             <Link
               href="/auth/signup"
@@ -78,9 +103,10 @@ const Navbar = () => {
             >
               Get Started
             </Link>
+            </div>
           </div>
 
-
+              
           {/* ================= Mobile Menu Button ================= */}
           <button
             type="button"
