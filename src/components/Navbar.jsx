@@ -35,10 +35,10 @@ const Navbar = () => {
             className="text-2xl font-bold tracking-tight"
           >
             <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={100}
-            height={40}
+              src="/images/logo.png"
+              alt="Logo"
+              width={100}
+              height={40}
             />
           </Link>
 
@@ -65,7 +65,7 @@ const Navbar = () => {
 
             {/* Sign In */}
             <Link
-              href="/login"
+              href="/auth/signin"
               className="text-sm font-medium text-indigo-400 transition-colors duration-200 hover:text-indigo-300"
             >
               Sign In
@@ -73,7 +73,7 @@ const Navbar = () => {
 
             {/* Get Started */}
             <Link
-              href="/register"
+              href="/auth/signup"
               className="ml-5 rounded-lg bg-[#6252f5] px-5 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#5545e8] hover:shadow-lg hover:shadow-indigo-500/20"
             >
               Get Started
@@ -147,9 +147,9 @@ const Navbar = () => {
 
             <div className="flex flex-col gap-2">
 
-              {/* Sign In */}
+              {/* Sign In  */}
               <Link
-                href="/login"
+                href="/auth/signin"
                 onClick={() => setIsMenuOpen(false)}
                 className="rounded-lg px-3 py-3 text-sm font-medium text-indigo-400 transition hover:bg-white/5"
               >
@@ -158,7 +158,7 @@ const Navbar = () => {
 
               {/* Get Started */}
               <Link
-                href="/register"
+                href="/auth/signup"
                 onClick={() => setIsMenuOpen(false)}
                 className="rounded-lg bg-[#6252f5] px-5 py-3 text-center text-sm font-medium text-white transition hover:bg-[#5545e8]"
               >
