@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data:session, isPending } = useSession();
  
-  //  console.log("session Navbar", session, "isPending Data", isPending);
+   console.log("session Navbar", session, "isPending Data", isPending);
    const user = session?.user;
   //  console.log("user Navbar", user);
 
